@@ -10,9 +10,11 @@ try:
 except:
     pass
 
+"""
 transactions_client = transactions_plugin.TransactionsPlugin(None, None, None, None)
 payments_client = payments_plugin.PaymentsPlugin(None)
 communications_client = communications_plugin.CommunicationsPlugin(None, None, None)
+"""
 
 class OrdersView(View):
     def get(self, request):
