@@ -3,9 +3,13 @@ from dotenv import load_dotenv
 import os
 from django.shortcuts import render, redirect
 from django.views import View
-from plugins.stripe_plugin import PaymentsPlugin
-from plugins.twilio_plugin import CommunicationsPlugin
-from plugins.transactions_plugin import TransactionsPlugin
+import sys
+
+sys.path.append("/plugins")
+
+from communications_plugin import CommunicationsPlugin
+from transactions_plugin import TransactionsPlugin
+from payments_plugin import PaymentsPlugin
 
 try:
     load_dotenv()
