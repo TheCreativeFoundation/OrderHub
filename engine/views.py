@@ -7,18 +7,16 @@ import sys
 
 sys.path.append("/plugins")
 
-from communications_plugin import CommunicationsPlugin
-from transactions_plugin import TransactionsPlugin
-from payments_plugin import PaymentsPlugin
+from plugins import communications_plugin, payments_plugin, transactions_plugin
 
 try:
     load_dotenv()
 except:
     pass
 
-transactions_client = TransactionsPlugin(None, None, None, None)
-payments_client = PaymentsPlugin(None,None)
-communications_client = CommunicationsPlugin(None, None)
+transactions_client = transactions_plugin.TransactionsPlugin(None, None, None, None)
+payments_client = payments_plugin.PaymentsPlugin(None,None)
+communications_client = communications_plugin.CommunicationsPlugin(None, None)
 
 class OrdersView(View):
     def get(self, request):
