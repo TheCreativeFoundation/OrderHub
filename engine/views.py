@@ -16,6 +16,9 @@ payments_client = payments_plugin.PaymentsPlugin(None)
 communications_client = communications_plugin.CommunicationsPlugin(None, None, None)
 """
 
+def index(request, ):
+    return "Hello from the index"
+
 class OrdersView(View):
     def get(self, request):
         pass
