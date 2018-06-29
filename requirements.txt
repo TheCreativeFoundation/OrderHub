@@ -1,4 +1,4 @@
 Django==2.0.4
 boto3
 twilio
-stripe
+python-dotenv
