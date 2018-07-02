@@ -6,10 +6,10 @@ class CommunicationsPlugin(object):
         self.client = Client(account,token)
         self.from_phone = from_phone
 
-    def send_sms(self, to_phone: str, message: str):
+    def send_sms(self, to_phone: str, message: str) -> int:
         status_code = 505
         try:
-            message = self.client.messages.create(
+            message: dict = self.client.messages.create(
                 to=to_phone,
                 from_=self.from_phone,
                 body=message
@@ -18,4 +18,9 @@ class CommunicationsPlugin(object):
                 status_code = 202
         except Exception as e:
             print(e)
+        return status_code
+
+    def send_order_to_business(self, company_id: str, order: str, to_phone: str) -> int:
+        status_code = 505
+        # should be writing to some real time database that gets "loaded" on the business' frontende
         return status_code
