@@ -3,3 +3,4 @@ boto3
 twilio
 python-dotenv
 stripe
+requests
