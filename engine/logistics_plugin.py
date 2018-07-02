@@ -3,16 +3,16 @@ from boto3.session import Session
 import hashlib
 import datetime
 
-class LogisticssPlugin(object):
+class LogisticsPlugin(object):
     def __init__(
-        self, aws_access_key: str, aws_access_secret: str, table_name: str, region: str
+        self, aws_access_key: str, aws_access_secret: str, transactions_table_name: str, region: str
     ):
         self.client = Session(
             aws_access_key_id=aws_access_key,
             aws_secret_access_key=aws_access_secret,
             region_name=region,
         )
-        self.transactions_table = self.client.resource("dynamodb").Table(table_name)
+        self.transactions_table = self.client.resource("dynamodb").Table(transactions_table_name)
 
     def record_transaction(self, transaction_body) -> int:
         status_code = 505 # CRITICAL/UNKOWN ERROR

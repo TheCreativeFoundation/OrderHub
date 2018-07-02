@@ -30,7 +30,7 @@ class SendOrderView(View):
         if status_code == 202:
             description: str = "Order of: {} for {} through the PayHub Gateway".format(request.POST["cost"],request.POST["order"])
             status_code = payments_client.charge_customer(request.POST["cost"], description, request.POST.get("stripe_token"))
-            if status_code = 202:
+            if status_code == 202:
                 # send order to business through adding the order with appsync and dynamodb
 
                 return render(request, self.success_template, context=None)
