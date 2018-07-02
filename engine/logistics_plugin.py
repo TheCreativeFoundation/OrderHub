@@ -3,7 +3,7 @@ from boto3.session import Session
 import hashlib
 import datetime
 
-class LogisticssPlugin(object):
+class LogisticsPlugin(object):
     def __init__(
         self, aws_access_key: str, aws_access_secret: str, table_name: str, region: str
     ):
