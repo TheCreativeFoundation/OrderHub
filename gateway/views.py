@@ -8,7 +8,10 @@ import requests
 class GatewayView(View):
     
     def get(self, request) -> HttpResponse:
-        #body: dict = json.loads(request.body.decode("utf-8"))
-        #template_data: dict = {"cost":"$"+str(body["cost"])}
-        #return render(request, "gateway.html", template_data)
-        return render(request, "gateway.html", {"cost":"$23.53"})
+        return render(request, "gateway.html", context=None)
+
+    def post(self, request) -> HttpResponse:
+        body: dict = json.loads(request.body.decode("utf-8"))
+        # cache information here
+        template_data: dict = {"cost":body["cost"]}
+        return render(request, "gateway.html", template_data)
