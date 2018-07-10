@@ -56,7 +56,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'payhub.urls'
+ROOT_URLCONF = 'orderhub.urls'
 
 TEMPLATES = [
     {
@@ -83,7 +83,7 @@ WSGI_APPLICATION = 'payhub.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'payhub.db'),
+        'NAME': os.path.join(BASE_DIR, 'orderhub.db'),
     }
 }
 
