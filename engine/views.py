@@ -13,7 +13,7 @@ try:
 except:
     pass
 
-logistics_client = logistics_plugin.LogisticsPlugin(None, None, "payhub-transactions", "us-east-2")
+logistics_client = logistics_plugin.LogisticsPlugin(None, None, "orderhub-transactions", "us-east-2")
 communications_client = communications_plugin.CommunicationsPlugin(None, None, None)
 payments_client = payments_plugin.PaymentsPlugin(None)
 
