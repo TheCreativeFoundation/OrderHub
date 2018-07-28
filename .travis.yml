@@ -19,4 +19,6 @@ deploy:
 notifications:
   email:
     - armaangupta01@gmail.com
+  slack: thecreativefoundation:n3PZ4D7QrW3uXjH7QdBH5exQ
   on_failure: always
+  on_success: always
